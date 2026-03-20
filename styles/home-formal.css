@@ -504,8 +504,10 @@ button {
 .formal-footer-inner {
   display: flex;
   align-items: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
   gap: 24px;
-  padding: 28px 0 36px;
+  padding: 18px 0 14px;
   overflow: visible;
 }
 
@@ -536,15 +538,14 @@ button {
   margin-left: auto;
 }
 
-.formal-footer-record-wrap {
-  padding-bottom: 28px;
-}
-
 .formal-footer-record {
-  display: inline-flex;
+  display: block;
+  width: 100%;
+  margin-top: -6px;
   color: #70839d;
   font-size: 13px;
   line-height: 1.6;
+  text-align: center;
   text-decoration: none;
 }
 
@@ -737,11 +738,7 @@ button {
 
   .formal-footer-inner {
     gap: 18px;
-    padding: 24px 0 30px;
-  }
-
-  .formal-footer-record-wrap {
-    padding-bottom: 22px;
+    padding: 18px 0 14px;
   }
 
   .formal-footer-contacts {

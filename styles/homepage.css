@@ -464,11 +464,13 @@ body {
 .footer-inner {
   position: absolute;
   left: 146.02px;
-  top: 22.47px;
+  top: 14px;
   width: 786.27px;
-  height: 44.93px;
+  height: 72px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .footer-logo {
@@ -571,10 +573,9 @@ body {
 }
 
 .footer-record {
-  position: absolute;
-  left: 146.02px;
-  top: 72.88px;
-  width: 786.27px;
+  display: block;
+  width: 100%;
+  margin-top: 8px;
   color: rgba(255, 255, 255, 0.42);
   font-size: 8.98px;
   line-height: 12.36px;
