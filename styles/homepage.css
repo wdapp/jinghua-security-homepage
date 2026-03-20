@@ -569,3 +569,19 @@ body {
   visibility: visible;
   transform: translateX(-50%) translateY(0);
 }
+
+.footer-record {
+  position: absolute;
+  left: 146.02px;
+  top: 72.88px;
+  width: 786.27px;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 8.98px;
+  line-height: 12.36px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.footer-record:hover {
+  color: rgba(255, 255, 255, 0.72);
+}

@@ -536,6 +536,22 @@ button {
   margin-left: auto;
 }
 
+.formal-footer-record-wrap {
+  padding-bottom: 28px;
+}
+
+.formal-footer-record {
+  display: inline-flex;
+  color: #70839d;
+  font-size: 13px;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.formal-footer-record:hover {
+  color: var(--primary);
+}
+
 .formal-social {
   position: relative;
   overflow: visible;
@@ -722,6 +738,10 @@ button {
   .formal-footer-inner {
     gap: 18px;
     padding: 24px 0 30px;
+  }
+
+  .formal-footer-record-wrap {
+    padding-bottom: 22px;
   }
 
   .formal-footer-contacts {
