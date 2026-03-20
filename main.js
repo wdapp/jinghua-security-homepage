@@ -25,7 +25,7 @@ if (footerPhone) {
 if (timelineOverlay) {
   window.setInterval(() => {
     timelineOverlay.classList.toggle("is-visible");
-  }, 2000);
+  }, 5000);
 }
 
 if (introCards.length) {
