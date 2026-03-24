@@ -506,7 +506,7 @@ button {
   align-items: center;
   align-content: flex-start;
   flex-wrap: wrap;
-  gap: 24px;
+  /* gap: 24px; */
   padding: 18px 0 14px;
   overflow: visible;
 }
@@ -515,7 +515,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 18px 28px;
-  margin-left: 36px;
+  margin-left: 140px;
 }
 
 .formal-footer-contacts p {
@@ -538,15 +538,32 @@ button {
   margin-left: auto;
 }
 
-.formal-footer-record {
-  display: block;
+.formal-footer-records {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 20px;
   width: 100%;
-  margin-top: -22px;
+}
+
+.formal-footer-record {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   color: #70839d;
   font-size: 13px;
   line-height: 1.6;
   text-align: center;
   text-decoration: none;
+}
+
+.formal-footer-record-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  flex: 0 0 auto;
 }
 
 .formal-footer-record:hover {
