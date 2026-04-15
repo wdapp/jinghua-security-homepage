@@ -1,0 +1,11 @@
+{
+  "name": "jhms-home",
+  "private": true,
+  "scripts": {
+    "upload": "zsh -ic 'node ./bin/upload'"
+  },
+  "dependencies": {
+    "ali-oss": "^6.23.0",
+    "mime-types": "^3.0.2"
+  }
+}

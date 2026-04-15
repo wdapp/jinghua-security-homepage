@@ -1,0 +1,161 @@
+#!/usr/bin/env node
+
+const fs = require('node:fs/promises');
+const path = require('node:path');
+
+const OSS = require('ali-oss');
+const mime = require('mime-types');
+
+const PROJECT_ROOT = path.resolve(__dirname, '..');
+const DIST_DIR = path.join(PROJECT_ROOT, 'dist');
+const OSS_CONFIG = {
+  region: 'oss-cn-beijing',
+  bucket: 'jhms-static',
+  prefix: '',
+};
+
+function exitWithError(message) {
+  console.error(`[upload] ${message}`);
+  process.exit(1);
+}
+
+function getRequiredEnv(name) {
+  return process.env[name] ? process.env[name].trim() : '';
+}
+
+function getConfigValue(name) {
+  const value = OSS_CONFIG[name];
+  return typeof value === 'string' ? value.trim() : '';
+}
+
+function normalizePrefix(prefix) {
+  return prefix.replace(/^\/+|\/+$/g, '');
+}
+
+function toPosixPath(filePath) {
+  return filePath.split(path.sep).join('/');
+}
+
+async function ensureDirectoryExists(targetPath) {
+  try {
+    const stat = await fs.stat(targetPath);
+    return stat.isDirectory();
+  } catch {
+    return false;
+  }
+}
+
+async function collectFiles(dir, root = dir) {
+  const entries = await fs.readdir(dir, { withFileTypes: true });
+  const files = [];
+
+  for (const entry of entries) {
+    if (entry.name.startsWith('.')) {
+      continue;
+    }
+
+    const absolutePath = path.join(dir, entry.name);
+
+    if (entry.isDirectory()) {
+      files.push(...(await collectFiles(absolutePath, root)));
+      continue;
+    }
+
+    if (!entry.isFile()) {
+      continue;
+    }
+
+    files.push({
+      absolutePath,
+      relativePath: path.relative(root, absolutePath),
+    });
+  }
+
+  return files.sort((left, right) => left.relativePath.localeCompare(right.relativePath));
+}
+
+function createClient() {
+  const requiredConfigNames = ['region', 'bucket'];
+  const missingConfigNames = requiredConfigNames.filter(
+    (name) => !getConfigValue(name) || getConfigValue(name).startsWith('REPLACE_WITH_')
+  );
+
+  if (missingConfigNames.length > 0) {
+    exitWithError(
+      `请先在 bin/upload 中填写项目 OSS 配置：${missingConfigNames.join(', ')}。`
+    );
+  }
+
+  const requiredEnvNames = ['OSS_ACCESS_KEY_ID', 'OSS_ACCESS_KEY_SECRET'];
+  const missingEnvNames = requiredEnvNames.filter((name) => !getRequiredEnv(name));
+
+  if (missingEnvNames.length > 0) {
+    exitWithError(
+      `缺少必要环境变量：${missingEnvNames.join(', ')}。\n` +
+        '请先设置 OSS_ACCESS_KEY_ID、OSS_ACCESS_KEY_SECRET 后再执行 npm run upload。'
+    );
+  }
+
+  const clientOptions = {
+    region: getConfigValue('region'),
+    bucket: getConfigValue('bucket'),
+    accessKeyId: getRequiredEnv('OSS_ACCESS_KEY_ID'),
+    accessKeySecret: getRequiredEnv('OSS_ACCESS_KEY_SECRET'),
+    authorizationV4: true,
+    secure: true,
+  };
+
+  const optionalStsToken = getRequiredEnv('OSS_STS_TOKEN');
+  if (optionalStsToken) {
+    clientOptions.stsToken = optionalStsToken;
+  }
+
+  const optionalEndpoint = getRequiredEnv('OSS_ENDPOINT');
+  if (optionalEndpoint) {
+    clientOptions.endpoint = optionalEndpoint;
+  }
+
+  return new OSS(clientOptions);
+}
+
+async function main() {
+  const hasDistDirectory = await ensureDirectoryExists(DIST_DIR);
+  if (!hasDistDirectory) {
+    exitWithError(`未找到 dist 目录：${DIST_DIR}`);
+  }
+
+  const files = await collectFiles(DIST_DIR);
+  if (files.length === 0) {
+    exitWithError(`dist 目录为空：${DIST_DIR}`);
+  }
+
+  const prefix = normalizePrefix(getConfigValue('prefix'));
+  const client = createClient();
+  const bucket = getConfigValue('bucket');
+
+  console.log(`[upload] 准备上传 ${files.length} 个文件到 oss://${bucket}/${prefix}/`);
+
+  let uploadedCount = 0;
+
+  for (const file of files) {
+    const objectKey = `${prefix}/${toPosixPath(file.relativePath)}`;
+    const contentType = mime.lookup(file.absolutePath);
+    const options =
+      typeof contentType === 'string'
+        ? { headers: { 'Content-Type': contentType } }
+        : undefined;
+
+    await client.put(objectKey, file.absolutePath, options);
+
+    uploadedCount += 1;
+    console.log(`[upload] (${uploadedCount}/${files.length}) ${file.relativePath} -> ${objectKey}`);
+  }
+
+  console.log(`[upload] 上传完成，共 ${uploadedCount} 个文件。`);
+}
+
+main().catch((error) => {
+  console.error('[upload] 上传失败。');
+  console.error(error && error.stack ? error.stack : error);
+  process.exit(1);
+});
