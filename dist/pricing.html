@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>收费机制 | 荆华密算</title>
+    <link rel="icon" href="./logo.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="./logo.png" />
+    <link rel="apple-touch-icon" href="./logo.png" />
+    <link rel="stylesheet" href="./styles/pricing.css" />
+  </head>
+  <body>
+    <div class="pricing-page">
+      <header class="pricing-header">
+        <div class="container pricing-header-inner">
+          <a class="pricing-brand" href="./index.html" aria-label="返回荆华密算首页">
+            <img class="pricing-brand-logo" src="./assets/Frame2/header-logo.png" alt="荆华密算" />
+          </a>
+          <nav class="pricing-nav" aria-label="收费页导航">
+            <a href="#token-pricing">按量计费</a>
+            <a href="#plan-pricing">套餐方案</a>
+            <a href="#deployment">企业部署</a>
+            <a href="#faq">常见问题</a>
+          </nav>
+          <div class="pricing-header-actions">
+            <a class="button button-secondary" href="./index.html">返回首页</a>
+            <button class="button button-primary" type="button" data-modal-open="activate">立即开通</button>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero-section">
+          <div class="hero-glow hero-glow-a" aria-hidden="true"></div>
+          <div class="hero-glow hero-glow-b" aria-hidden="true"></div>
+          <div class="container hero-content">
+            <div class="hero-copy">
+              <p class="section-kicker">Pricing</p>
+              <h1>API 调用与企业级部署</h1>
+              <p class="hero-summary">
+                面向模型推理、知识问答、私域智能助手与安全场景，我们提供清晰的按量计费、月度套餐和专属集群方案，
+                让成本核算更简单、采购决策更可控。
+              </p>
+              <div class="hero-actions">
+                <button class="button button-primary" type="button" data-modal-open="activate">立即开通</button>
+                <button class="button button-secondary" type="button" data-modal-open="sales">联系销售</button>
+                <a class="button button-ghost" href="#plan-pricing">查看套餐</a>
+              </div>
+              <div class="hero-tags" aria-label="收费机制亮点">
+                <span>支持输入/输出 Token 分开计费</span>
+                <span>支持缓存命中降本</span>
+                <span>支持私有化独立部署</span>
+              </div>
+            </div>
+
+
+          </div>
+        </section>
+
+        <section class="section-block" id="token-pricing">
+          <div class="container">
+            <div class="section-heading">
+              <p class="section-kicker">Token Billing</p>
+              <h2>按量计费</h2>
+              <p>
+                适合快速接入 API、验证业务效果和中小规模在线调用。输入、输出与缓存命中独立核算，便于你按调用结构优化成本。
+              </p>
+            </div>
+
+            <div class="price-card-grid">
+              <article class="price-card price-card-highlight">
+                <div class="price-card-header">
+                  <h3>JH-Reasoner</h3>
+                  <span>复杂推理模型</span>
+                </div>
+                <ul class="price-list">
+                  <li>
+                    <span>百万输入 Token</span>
+                    <strong>￥2.60</strong>
+                  </li>
+                  <li>
+                    <span>百万输出 Token</span>
+                    <strong>￥8.00</strong>
+                  </li>
+                  <li>
+                    <span>缓存命中输入</span>
+                    <strong>￥0.80</strong>
+                  </li>
+                </ul>
+                <p class="card-note">适合复杂问答、逻辑分析、报告生成和多轮推理。</p>
+              </article>
+
+              <article class="price-card">
+                <div class="price-card-header">
+                  <h3>JH-Chat</h3>
+                  <span>通用对话模型</span>
+                </div>
+                <ul class="price-list">
+                  <li>
+                    <span>百万输入 Token</span>
+                    <strong>￥1.20</strong>
+                  </li>
+                  <li>
+                    <span>百万输出 Token</span>
+                    <strong>￥4.20</strong>
+                  </li>
+                  <li>
+                    <span>缓存命中输入</span>
+                    <strong>￥0.40</strong>
+                  </li>
+                </ul>
+                <p class="card-note">适合客服助手、知识库问答、流程机器人等高频场景。</p>
+              </article>
+
+              <article class="price-card">
+                <div class="price-card-header">
+                  <h3>JH-Embed</h3>
+                  <span>向量检索模型</span>
+                </div>
+                <ul class="price-list">
+                  <li>
+                    <span>百万输入 Token</span>
+                    <strong>￥0.80</strong>
+                  </li>
+                  <li>
+                    <span>百万向量写入</span>
+                    <strong>￥1.50</strong>
+                  </li>
+                  <li>
+                    <span>百万召回请求</span>
+                    <strong>￥0.60</strong>
+                  </li>
+                </ul>
+                <p class="card-note">适合 RAG、企业知识库、检索增强推荐和安全语义分析。</p>
+              </article>
+            </div>
+
+            <div class="billing-note">
+              <p>计费说明：按自然月结算，费用保留到分；当日消费明细实时更新，缓存命中价格按实际命中 Token 计算。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block section-block-contrast" id="plan-pricing">
+          <div class="container">
+            <div class="section-heading">
+              <p class="section-kicker">Plans</p>
+              <h2>套餐方案</h2>
+              <p>适合希望提前锁定预算、降低采购波动的团队，套餐内含额度，用完后可按量续费。</p>
+            </div>
+
+            <div class="plan-grid">
+              <article class="plan-card">
+                <p class="plan-tier">Starter</p>
+                <h3>轻量接入版</h3>
+                <div class="plan-price">
+                  <strong>￥1,999</strong>
+                  <span>/ 月</span>
+                </div>
+                <ul class="plan-features">
+                  <li>含 500 万输入 Token</li>
+                  <li>含 120 万输出 Token</li>
+                  <li>标准 API 接入与控制台</li>
+                  <li>1 个项目空间</li>
+                </ul>
+                <button class="button button-secondary button-block" type="button" data-modal-open="activate">申请试用</button>
+              </article>
+
+              <article class="plan-card plan-card-featured">
+                <div class="plan-badge">推荐</div>
+                <p class="plan-tier">Growth</p>
+                <h3>业务增长版</h3>
+                <div class="plan-price">
+                  <strong>￥8,900</strong>
+                  <span>/ 月</span>
+                </div>
+                <ul class="plan-features">
+                  <li>含 3000 万输入 Token</li>
+                  <li>含 900 万输出 Token</li>
+                  <li>缓存命中优惠与限流保护</li>
+                  <li>5 个项目空间与团队协作</li>
+                </ul>
+                <button class="button button-primary button-block" type="button" data-modal-open="sales">联系顾问</button>
+              </article>
+
+              <article class="plan-card">
+                <p class="plan-tier">Scale</p>
+                <h3>规模生产版</h3>
+                <div class="plan-price">
+                  <strong>￥19,900</strong>
+                  <span>/ 月</span>
+                </div>
+                <ul class="plan-features">
+                  <li>含 1.2 亿输入 Token</li>
+                  <li>含 3600 万输出 Token</li>
+                  <li>专属技术支持与告警看板</li>
+                  <li>支持 VPC 与审计留痕</li>
+                </ul>
+                <button class="button button-secondary button-block" type="button" data-modal-open="sales">预约演示</button>
+              </article>
+            </div>
+
+            <div class="compare-table-wrap">
+              <table class="compare-table">
+                <thead>
+                  <tr>
+                    <th>能力项</th>
+                    <th>Starter</th>
+                    <th>Growth</th>
+                    <th>Scale</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>并发请求</td>
+                    <td>20 QPS</td>
+                    <td>80 QPS</td>
+                    <td>200 QPS</td>
+                  </tr>
+                  <tr>
+                    <td>上下文长度</td>
+                    <td>32K</td>
+                    <td>64K</td>
+                    <td>128K</td>
+                  </tr>
+                  <tr>
+                    <td>缓存加速</td>
+                    <td>基础版</td>
+                    <td>增强版</td>
+                    <td>企业版</td>
+                  </tr>
+                  <tr>
+                    <td>安全审计</td>
+                    <td>基础日志</td>
+                    <td>操作审计</td>
+                    <td>全链路审计</td>
+                  </tr>
+                  <tr>
+                    <td>技术支持</td>
+                    <td>工单</td>
+                    <td>工单 + 群支持</td>
+                    <td>专属经理 + SLA</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block" id="deployment">
+          <div class="container">
+            <div class="section-heading">
+              <p class="section-kicker">Enterprise</p>
+              <h2>企业部署</h2>
+              <p>适合对数据隔离、合规审计、稳定 SLA 或专有模型适配有要求的组织。</p>
+            </div>
+
+            <div class="enterprise-grid">
+              <article class="enterprise-card">
+                <h3>专属实例</h3>
+                <p class="enterprise-price">￥39,900 起 / 月</p>
+                <p>提供专属推理资源池、独立密钥域、弹性扩容和基础 SLA。</p>
+                <ul class="enterprise-features">
+                  <li>独立实例隔离</li>
+                  <li>按峰值并发规划资源</li>
+                  <li>支持多环境发布</li>
+                </ul>
+                <button class="button button-secondary button-block" type="button" data-modal-open="sales">获取报价</button>
+              </article>
+
+              <article class="enterprise-card enterprise-card-highlight">
+                <h3>私有化部署</h3>
+                <p class="enterprise-price">按项目报价</p>
+                <p>支持本地机房、专有云和混合云部署，适配内网与安全合规要求。</p>
+                <ul class="enterprise-features">
+                  <li>支持 GPU / NPU 异构环境</li>
+                  <li>支持日志审计与权限分级</li>
+                  <li>支持专属模型调优与接入</li>
+                </ul>
+                <button class="button button-primary button-block" type="button" data-modal-open="sales">联系方案顾问</button>
+              </article>
+
+              <article class="enterprise-card">
+                <h3>行业联合方案</h3>
+                <p class="enterprise-price">按场景报价</p>
+                <p>面向金融、政企、医疗和能源场景提供咨询、实施与联合创新服务。</p>
+                <ul class="enterprise-features">
+                  <li>场景化交付</li>
+                  <li>安全策略联调</li>
+                  <li>专家驻场可选</li>
+                </ul>
+                <button class="button button-secondary button-block" type="button" data-modal-open="sales">预约沟通</button>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block section-block-contrast" id="faq">
+          <div class="container">
+            <div class="section-heading">
+              <p class="section-kicker">FAQ</p>
+              <h2>常见问题</h2>
+            </div>
+
+            <div class="faq-list">
+              <article class="faq-item">
+                <h3>Token 是如何统计的？</h3>
+                <p>输入内容、系统提示词、工具调用上下文和模型输出分别统计，最终以平台控制台展示的实际用量为准。</p>
+              </article>
+              <article class="faq-item">
+                <h3>套餐额度用完后怎么办？</h3>
+                <p>可继续按量调用，不会立即中断服务；你也可以提前购买补充包或升级到更高档套餐。</p>
+              </article>
+              <article class="faq-item">
+                <h3>是否支持发票和对公付款？</h3>
+                <p>支持。企业客户可签订合同、走对公流程，并支持按月结算或项目制采购。</p>
+              </article>
+              <article class="faq-item">
+                <h3>是否可以做定制化价格？</h3>
+                <p>可以。对于高并发、大上下文、私有化与行业联合方案，会根据资源规模和服务范围定制报价。</p>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <div class="modal-backdrop" hidden data-modal-backdrop>
+        <section
+          class="consult-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="consult-modal-title"
+          aria-describedby="consult-modal-desc"
+          data-consult-modal
+        >
+          <button class="modal-close" type="button" aria-label="关闭弹窗" data-modal-close>
+            <span aria-hidden="true">×</span>
+          </button>
+
+          <div class="modal-panel">
+            <div class="modal-copy">
+              <p class="section-kicker modal-kicker">Consulting</p>
+              <h2 id="consult-modal-title">立即开通</h2>
+              <p id="consult-modal-desc" class="modal-desc">
+                留下你的联系方式与场景需求，我们将根据使用目标为你安排开通、试用或商务顾问对接。
+              </p>
+              <div class="modal-mode-switch" role="tablist" aria-label="咨询类型切换">
+                <button class="mode-chip is-active" type="button" role="tab" aria-selected="true" data-modal-mode="activate">
+                  立即开通
+                </button>
+                <button class="mode-chip" type="button" role="tab" aria-selected="false" data-modal-mode="sales">
+                  联系销售
+                </button>
+              </div>
+              <ul class="modal-highlights">
+                <li>支持 API 开通、试用额度和套餐咨询</li>
+                <li>支持企业采购、对公付款和发票流程</li>
+                <li>支持专属实例与私有化部署方案对接</li>
+              </ul>
+            </div>
+
+            <form class="consult-form" data-consult-form>
+              <input type="hidden" name="mode" value="activate" data-modal-mode-input />
+              <label class="form-field">
+                <span>姓名</span>
+                <input type="text" name="name" placeholder="请输入联系人姓名" required />
+              </label>
+              <label class="form-field">
+                <span>公司名称</span>
+                <input type="text" name="company" placeholder="请输入公司或团队名称" required />
+              </label>
+              <label class="form-field">
+                <span>联系方式</span>
+                <input type="text" name="contact" placeholder="手机号 / 邮箱 / 微信" required />
+              </label>
+              <label class="form-field">
+                <span>关注方案</span>
+                <select name="plan" required>
+                  <option value="">请选择你关注的方案</option>
+                  <option value="starter">Starter 轻量接入版</option>
+                  <option value="growth">Growth 业务增长版</option>
+                  <option value="scale">Scale 规模生产版</option>
+                  <option value="enterprise">企业专属 / 私有化</option>
+                </select>
+              </label>
+              <label class="form-field form-field-full">
+                <span>业务需求</span>
+                <textarea
+                  name="message"
+                  rows="4"
+                  placeholder="例如：希望开通 API、预估日调用量、是否需要私有化部署、上线时间等"
+                  required
+                ></textarea>
+              </label>
+              <div class="form-footer">
+                <p class="form-hint">提交后页面会展示预约成功提示；如需接入真实后端，可继续扩展接口提交逻辑。</p>
+                <button class="button button-primary button-block" type="submit" data-modal-submit>
+                  提交申请
+                </button>
+              </div>
+              <p class="form-feedback" aria-live="polite" data-form-feedback></p>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="./pricing.js"></script>
+  </body>
+</html>
