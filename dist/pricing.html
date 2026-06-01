@@ -18,13 +18,13 @@
           </a>
           <nav class="pricing-nav" aria-label="收费页导航">
             <a href="#token-pricing">按量计费</a>
-            <a href="#plan-pricing">套餐方案</a>
+            <a href="#plan-pricing">资讯收费</a>
             <a href="#deployment">企业部署</a>
             <a href="#faq">常见问题</a>
           </nav>
+          </nav>
           <div class="pricing-header-actions">
             <a class="button button-secondary" href="./index.html">返回首页</a>
-            <button class="button button-primary" type="button" data-modal-open="activate">立即开通</button>
           </div>
         </div>
       </header>
@@ -56,6 +56,8 @@
 
           </div>
         </section>
+
+
 
         <section class="section-block" id="token-pricing">
           <div class="container">
@@ -141,108 +143,135 @@
           </div>
         </section>
 
+
         <section class="section-block section-block-contrast" id="plan-pricing">
           <div class="container">
             <div class="section-heading">
-              <p class="section-kicker">Plans</p>
-              <h2>套餐方案</h2>
-              <p>适合希望提前锁定预算、降低采购波动的团队，套餐内含额度，用完后可按量续费。</p>
+              <p class="section-kicker">Research</p>
+              <h2>付费研究报告</h2>
+              <p>深度分析AI隐私与安全领域的专业报告，助你了解前沿技术与合规实践。</p>
             </div>
 
-            <div class="plan-grid">
-              <article class="plan-card">
-                <p class="plan-tier">Starter</p>
-                <h3>轻量接入版</h3>
-                <div class="plan-price">
-                  <strong>￥1,999</strong>
-                  <span>/ 月</span>
+            <div class="report-list">
+              <article class="report-item">
+                <div class="report-item-header">
+                  <div class="report-tags">
+                    <span class="report-tag">AI隐私</span>
+                    <span class="report-tag">数据泄露</span>
+                    <span class="report-tag">个人敏感信息</span>
+                  </div>
+                  <h3>AI聊天工具正在成为新的隐私入口：用户到底泄露了什么？</h3>
                 </div>
-                <ul class="plan-features">
-                  <li>含 500 万输入 Token</li>
-                  <li>含 120 万输出 Token</li>
-                  <li>标准 API 接入与控制台</li>
-                  <li>1 个项目空间</li>
-                </ul>
-                <button class="button button-secondary button-block" type="button" data-modal-open="activate">申请试用</button>
+                <p class="report-summary">随着AI聊天工具进入日常工作和生活，用户在咨询法律、健康、财务、情感等问题时，往往会不自觉输入大量个人信息。相比传统搜索，AI对话更连续、更私密，也更容易形成长期可追溯的上下文记录。</p>
+                <div class="report-paid">
+                  <span class="report-paid-label">付费后可查看：</span>
+                  <span class="report-paid-content">AI对话中的常见敏感信息类型、个人用户使用AI时的隐私风险清单，以及如何判断一款AI工具是否适合处理私密内容。</span>
+                </div>
+                <button class="button button-primary" type="button" data-modal-open="payment">付费查看完整报告</button>
               </article>
 
-              <article class="plan-card plan-card-featured">
-                <div class="plan-badge">推荐</div>
-                <p class="plan-tier">Growth</p>
-                <h3>业务增长版</h3>
-                <div class="plan-price">
-                  <strong>￥8,900</strong>
-                  <span>/ 月</span>
+              <article class="report-item">
+                <div class="report-item-header">
+                  <div class="report-tags">
+                    <span class="report-tag">企业AI</span>
+                    <span class="report-tag">Shadow AI</span>
+                    <span class="report-tag">商业机密</span>
+                  </div>
+                  <h3>企业员工把合同、客户资料发给AI：真正的风险在哪里？</h3>
                 </div>
-                <ul class="plan-features">
-                  <li>含 3000 万输入 Token</li>
-                  <li>含 900 万输出 Token</li>
-                  <li>缓存命中优惠与限流保护</li>
-                  <li>5 个项目空间与团队协作</li>
-                </ul>
-                <button class="button button-primary button-block" type="button" data-modal-open="sales">联系顾问</button>
+                <p class="report-summary">越来越多员工会用AI处理合同、会议纪要、客户材料、财务表格和内部方案。但如果企业没有统一的AI使用规范，敏感资料可能进入个人账号、第三方平台或不可控的外部环境，形成新的数据外流风险。</p>
+                <div class="report-paid">
+                  <span class="report-paid-label">付费后可查看：</span>
+                  <span class="report-paid-content">企业高风险AI使用场景、员工误传资料的典型路径、企业AI隐私管理建议和内部培训要点。</span>
+                </div>
+                <button class="button button-primary" type="button" data-modal-open="payment">付费查看完整报告</button>
               </article>
 
-              <article class="plan-card">
-                <p class="plan-tier">Scale</p>
-                <h3>规模生产版</h3>
-                <div class="plan-price">
-                  <strong>￥19,900</strong>
-                  <span>/ 月</span>
+              <article class="report-item">
+                <div class="report-item-header">
+                  <div class="report-tags">
+                    <span class="report-tag">密态计算</span>
+                    <span class="report-tag">TEE</span>
+                    <span class="report-tag">使用中数据保护</span>
+                  </div>
+                  <h3>为什么普通加密不够？AI时代更需要保护"使用中数据"</h3>
                 </div>
-                <ul class="plan-features">
-                  <li>含 1.2 亿输入 Token</li>
-                  <li>含 3600 万输出 Token</li>
-                  <li>专属技术支持与告警看板</li>
-                  <li>支持 VPC 与审计留痕</li>
-                </ul>
-                <button class="button button-secondary button-block" type="button" data-modal-open="sales">预约演示</button>
+                <p class="report-summary">传统安全方案更多关注"传输中"和"存储中"的数据保护，但AI推理过程中，数据需要被模型读取和计算。密态计算关注的是数据在计算过程中仍然保持隔离和受保护，适合用于处理合同、医疗、法律、金融等高敏感场景。</p>
+                <div class="report-paid">
+                  <span class="report-paid-label">付费后可查看：</span>
+                  <span class="report-paid-content">传输加密、存储加密、密态计算的区别，以及为什么AI隐私产品需要关注"使用中数据安全"。</span>
+                </div>
+                <button class="button button-primary" type="button" data-modal-open="payment">付费查看技术解读</button>
               </article>
-            </div>
 
-            <div class="compare-table-wrap">
-              <table class="compare-table">
-                <thead>
-                  <tr>
-                    <th>能力项</th>
-                    <th>Starter</th>
-                    <th>Growth</th>
-                    <th>Scale</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>并发请求</td>
-                    <td>20 QPS</td>
-                    <td>80 QPS</td>
-                    <td>200 QPS</td>
-                  </tr>
-                  <tr>
-                    <td>上下文长度</td>
-                    <td>32K</td>
-                    <td>64K</td>
-                    <td>128K</td>
-                  </tr>
-                  <tr>
-                    <td>缓存加速</td>
-                    <td>基础版</td>
-                    <td>增强版</td>
-                    <td>企业版</td>
-                  </tr>
-                  <tr>
-                    <td>安全审计</td>
-                    <td>基础日志</td>
-                    <td>操作审计</td>
-                    <td>全链路审计</td>
-                  </tr>
-                  <tr>
-                    <td>技术支持</td>
-                    <td>工单</td>
-                    <td>工单 + 群支持</td>
-                    <td>专属经理 + SLA</td>
-                  </tr>
-                </tbody>
-              </table>
+              <article class="report-item">
+                <div class="report-item-header">
+                  <div class="report-tags">
+                    <span class="report-tag">AI Agent</span>
+                    <span class="report-tag">长期记忆</span>
+                    <span class="report-tag">工具调用安全</span>
+                  </div>
+                  <h3>AI Agent时代，隐私风险不只来自一次对话</h3>
+                </div>
+                <p class="report-summary">当AI从聊天机器人变成Agent后，它可能会调用工具、读取文件、保存记忆、连接知识库，甚至跨系统执行任务。这意味着隐私风险不再只发生在"输入一句话"的瞬间，而是贯穿任务规划、文件读取、工具调用和结果输出全过程。</p>
+                <div class="report-paid">
+                  <span class="report-paid-label">付费后可查看：</span>
+                  <span class="report-paid-content">AI Agent的隐私风险链路、工具调用中的敏感信息暴露点，以及企业部署Agent前需要做的安全检查。</span>
+                </div>
+                <button class="button button-primary" type="button" data-modal-open="payment">付费查看完整报告</button>
+              </article>
+
+              <article class="report-item">
+                <div class="report-item-header">
+                  <div class="report-tags">
+                    <span class="report-tag">高敏场景</span>
+                    <span class="report-tag">法律咨询</span>
+                    <span class="report-tag">医疗隐私</span>
+                    <span class="report-tag">金融资料</span>
+                  </div>
+                  <h3>法律、医疗、金融场景为什么更需要私密AI？</h3>
+                </div>
+                <p class="report-summary">法律纠纷、病情咨询、资产规划、心理倾诉等场景，天然包含大量个人隐私与敏感资料。用户既希望获得AI效率，又担心资料被记录、训练、传播或被第三方接触。</p>
+                <div class="report-paid">
+                  <span class="report-paid-label">付费后可查看：</span>
+                  <span class="report-paid-content">六类高敏AI使用场景分析、不同用户的隐私顾虑，以及适合私密AI产品切入的服务方向。</span>
+                </div>
+                <button class="button button-primary" type="button" data-modal-open="payment">付费查看场景报告</button>
+              </article>
+
+              <article class="report-item">
+                <div class="report-item-header">
+                  <div class="report-tags">
+                    <span class="report-tag">AI合规</span>
+                    <span class="report-tag">数据治理</span>
+                    <span class="report-tag">企业内控</span>
+                  </div>
+                  <h3>企业AI合规正在从"能不能用"变成"怎么安全地用"</h3>
+                </div>
+                <p class="report-summary">随着AI工具进入企业流程，企业不再只是讨论是否允许员工使用AI，而是需要建立更细的规则：哪些资料能上传，哪些资料必须脱敏，哪些场景必须使用企业级或私密环境，哪些行为需要审计和留痕。</p>
+                <div class="report-paid">
+                  <span class="report-paid-label">付费后可查看：</span>
+                  <span class="report-paid-content">企业AI使用规范模板、敏感数据分级建议、员工AI使用红线和内控检查表。</span>
+                </div>
+                <button class="button button-primary" type="button" data-modal-open="payment">付费查看合规建议</button>
+              </article>
+
+              <article class="report-item">
+                <div class="report-item-header">
+                  <div class="report-tags">
+                    <span class="report-tag">用户问答</span>
+                    <span class="report-tag">AI训练</span>
+                    <span class="report-tag">数据留存</span>
+                  </div>
+                  <h3>大模型会不会记住我的内容？用户最关心的五个问题</h3>
+                </div>
+                <p class="report-summary">用户使用AI时最常见的顾虑包括：我的内容会不会被训练？聊天记录会不会保存？平台员工能不能看到？上传的文件会不会泄露？删除记录是否真的删除？这些问题直接影响用户对AI产品的信任。</p>
+                <div class="report-paid">
+                  <span class="report-paid-label">付费后可查看：</span>
+                  <span class="report-paid-content">AI产品隐私条款解读、用户使用前应关注的五类设置，以及如何降低对话和文件上传风险。</span>
+                </div>
+                <button class="button button-primary" type="button" data-modal-open="payment">付费查看隐私问答</button>
+              </article>
             </div>
           </div>
         </section>
@@ -322,6 +351,9 @@
             </div>
           </div>
         </section>
+
+
+
       </main>
 
       <div class="modal-backdrop" hidden data-modal-backdrop>
@@ -403,6 +435,40 @@
           </div>
         </section>
       </div>
+
+      <section
+        class="payment-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="payment-modal-title"
+        hidden
+        data-payment-modal
+      >
+        <div class="payment-modal-content">
+          <button class="modal-close" type="button" aria-label="关闭弹窗" data-payment-close>
+            <span aria-hidden="true">×</span>
+          </button>
+
+          <div class="payment-modal-header">
+            <img class="payment-brand" src="./assets/Frame2/header-logo.png" alt="荆华密算" />
+            <h2 id="payment-modal-title">扫码支付</h2>
+            <p class="payment-desc">使用支付宝扫描下方二维码完成支付</p>
+          </div>
+
+          <div class="payment-qrcode">
+            <img src="./assets/20260601-115853.jpg" alt="支付宝付款码" />
+          </div>
+
+          <div class="payment-amount">
+            <p class="payment-amount-label">支付金额</p>
+            <p class="payment-amount-value"><span>￥</span>9.90</p>
+          </div>
+
+          <p class="payment-tips">
+            <strong>温馨提示：</strong>支付成功后，内容将在 24 小时内解锁。如需帮助请联系客服。
+          </p>
+        </div>
+      </section>
     </div>
     <script src="./pricing.js"></script>
   </body>

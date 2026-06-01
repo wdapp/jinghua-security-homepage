@@ -10,6 +10,9 @@ const openButtons = Array.from(document.querySelectorAll('[data-modal-open]'));
 const closeButtons = Array.from(document.querySelectorAll('[data-modal-close]'));
 const modeButtons = Array.from(document.querySelectorAll('[data-modal-mode]'));
 
+const paymentModal = document.querySelector('[data-payment-modal]');
+const paymentCloseButtons = Array.from(document.querySelectorAll('[data-payment-close]'));
+
 const modalContent = {
   activate: {
     title: '立即开通',
@@ -56,6 +59,16 @@ const setModalMode = (mode) => {
 };
 
 const openModal = (mode, trigger) => {
+  if (mode === 'payment') {
+    if (!paymentModal) {
+      return;
+    }
+    lastTrigger = trigger || null;
+    paymentModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    return;
+  }
+
   if (!modalBackdrop) {
     return;
   }
@@ -71,6 +84,17 @@ const openModal = (mode, trigger) => {
     window.setTimeout(() => {
       firstField.focus();
     }, 20);
+  }
+};
+
+const closePaymentModal = () => {
+  if (!paymentModal) {
+    return;
+  }
+  paymentModal.hidden = true;
+  document.body.style.overflow = '';
+  if (lastTrigger instanceof HTMLElement) {
+    lastTrigger.focus();
   }
 };
 
@@ -97,6 +121,10 @@ closeButtons.forEach((button) => {
   button.addEventListener('click', closeModal);
 });
 
+paymentCloseButtons.forEach((button) => {
+  button.addEventListener('click', closePaymentModal);
+});
+
 modeButtons.forEach((button) => {
   button.addEventListener('click', () => {
     setModalMode(button.dataset.modalMode || 'activate');
@@ -112,8 +140,12 @@ if (modalBackdrop) {
 }
 
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && modalBackdrop && !modalBackdrop.hidden) {
-    closeModal();
+  if (event.key === 'Escape') {
+    if (paymentModal && !paymentModal.hidden) {
+      closePaymentModal();
+    } else if (modalBackdrop && !modalBackdrop.hidden) {
+      closeModal();
+    }
   }
 });
 

@@ -776,6 +776,211 @@ button {
   line-height: 1.7;
 }
 
+.report-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.report-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto auto;
+  gap: 14px 24px;
+  padding: 24px 28px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  transition: border-color 180ms ease;
+}
+
+.report-item:hover {
+  border-color: var(--line-strong);
+}
+
+.report-item-header {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.report-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.report-tag {
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(75, 141, 255, 0.12);
+  border: 1px solid rgba(75, 141, 255, 0.2);
+  color: #a8c5ff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.report-item h3 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.report-item > .report-summary {
+  grid-column: 1;
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.report-paid {
+  grid-column: 1;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: rgba(255, 191, 102, 0.06);
+  border: 1px solid rgba(255, 191, 102, 0.15);
+}
+
+.report-paid-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.report-paid-content {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.report-item > .button {
+  grid-column: 2;
+  grid-row: 1 / 5;
+  align-self: start;
+  min-width: 140px;
+}
+
+.payment-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(4, 7, 14, 0.85);
+  backdrop-filter: blur(16px);
+}
+
+.payment-modal[hidden] {
+  display: none;
+}
+
+.payment-modal-content {
+  position: relative;
+  width: min(400px, 100%);
+  padding: 48px 40px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.payment-modal-header {
+  margin-bottom: 28px;
+}
+
+.payment-brand {
+  width: 140px;
+  height: auto;
+  margin: 0 auto 20px;
+}
+
+.payment-modal-header h2 {
+  margin: 0 0 8px;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.payment-desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.payment-qrcode {
+  padding: 16px;
+  border-radius: 16px;
+  background: #ffffff;
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+.payment-qrcode img {
+  width: 200px;
+  display: block;
+}
+
+.payment-amount {
+  padding: 16px 24px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  background: rgba(75, 141, 255, 0.08);
+  border: 1px solid rgba(75, 141, 255, 0.2);
+}
+
+.payment-amount-label {
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.payment-amount-value {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.payment-amount-value span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.payment-tips {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.payment-tips strong {
+  color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .payment-modal-content {
+    padding: 36px 24px;
+  }
+
+  .payment-qrcode img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .payment-amount-value {
+    font-size: 28px;
+  }
+}
+
 @media (max-width: 1100px) {
   .pricing-nav {
     display: none;
@@ -784,7 +989,8 @@ button {
   .hero-content,
   .price-card-grid,
   .plan-grid,
-  .enterprise-grid {
+  .enterprise-grid,
+  .report-list {
     grid-template-columns: 1fr;
     flex-direction: column;
   }
@@ -860,6 +1066,19 @@ button {
   .compare-table td {
     padding: 16px;
   }
+
+  .report-item {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .report-item > .button {
+    grid-column: 1;
+    grid-row: auto;
+    width: 100%;
+    margin-top: 8px;
+  }
+}
 
   .modal-backdrop {
     padding: 16px;
